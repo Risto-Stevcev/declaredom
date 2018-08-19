@@ -1,0 +1,23 @@
+{
+  "name": "declaredom",
+  "version": "0.1.0",
+  "description": "Declarative syntax for creating DOM elements",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/Risto-Stevcev/declaredom.git"
+  },
+  "keywords": [
+    "declarative",
+    "dom"
+  ],
+  "author": "Risto Stevcev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Risto-Stevcev/declaredom/issues"
+  },
+  "homepage": "https://github.com/Risto-Stevcev/declaredom#readme"
+}
