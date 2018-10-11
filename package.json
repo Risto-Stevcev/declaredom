@@ -1,9 +1,10 @@
 {
   "name": "declaredom",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Declarative syntax for creating DOM elements",
   "main": "index.js",
   "scripts": {
+    "example": "parcel example.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Risto-Stevcev/declaredom/issues"
   },
-  "homepage": "https://github.com/Risto-Stevcev/declaredom#readme"
+  "homepage": "https://github.com/Risto-Stevcev/declaredom#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.10.3"
+  }
 }
