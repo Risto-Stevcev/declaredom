@@ -1,6 +1,6 @@
 {
   "name": "declaredom",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Declarative syntax for creating DOM elements",
   "main": "index.js",
   "scripts": {
