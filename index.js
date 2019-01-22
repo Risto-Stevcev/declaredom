@@ -53,7 +53,7 @@ const setAttribute = (element, key) => value => {
       if (key.startsWith('on'))
         element.addEventListener(key.replace(/^on/, '').toLowerCase(), value)
       else
-        element[key] = value
+        element.setAttribute(key.replace(/_/g, '-'), value)
   }
 }
 
