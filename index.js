@@ -33,8 +33,11 @@ const getChildrenOnly = (arg1, arg2) =>
 const setAttribute = (element, key) => value => {
   switch (key) {
     case 'id': element.id = value ;break
-    case 'className': element.className = value ;break
+    case 'className':
+    case 'class_name':
+      element.className = value ;break
     case 'classSet':
+    case 'class_set':
       element.className = [element.className.trim()].concat(
         Object.entries(value)
           .map(([className, isIncluded]) => isIncluded ? className : '')
@@ -51,7 +54,7 @@ const setAttribute = (element, key) => value => {
       element.contentEditable = value ? 'true' : 'false' ;break
     default:
       if (key.startsWith('on'))
-        element.addEventListener(key.replace(/^on/, '').toLowerCase(), value)
+        element.addEventListener(key.replace(/^on[_]{0,1}/, '').toLowerCase(), value)
       else
         element.setAttribute(key.replace(/_/g, '-'), value)
   }
