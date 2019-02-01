@@ -1,6 +1,6 @@
 {
   "name": "declaredom",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Declarative syntax for creating DOM elements",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,6 @@
   },
   "homepage": "https://github.com/Risto-Stevcev/declaredom#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.10.3"
+    "parcel-bundler": "^1.11.0"
   }
 }
