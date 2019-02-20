@@ -1,5 +1,9 @@
 # declaredom
 
+[![Build Status](https://travis-ci.org/Risto-Stevcev/declaredom.svg?branch=master)](https://travis-ci.org/Risto-Stevcev/declaredom)
+[![Latest release](https://img.shields.io/npm/v/declaredom.svg?style=flat)](https://www.npmjs.com/package/declaredom)
+[![License](https://img.shields.io/npm/l/declaredom.svg?style=flat)](https://github.com/Risto-Stevcev/declaredom/blob/master/LICENSE)
+
 ## Installation
 
 `npm install --save declaredom`
