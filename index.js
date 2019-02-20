@@ -87,7 +87,7 @@ const createNode = (tagName, { attributes, children }) => {
 
 const createTextNode = (_, text) => document.createTextNode(text)
 
-const _element = tagName => (arg1, arg2) => {
+const _element = (tagName, arg1, arg2) => {
   const constructor = tagName === 'text' ? createTextNode : createNode
   const args = tagName === 'text' ? getText(arg1, arg2) :
     tagName === 'fragment' ? getChildrenOnly(arg1, arg2) : getArgs(arg1, arg2)
@@ -96,142 +96,141 @@ const _element = tagName => (arg1, arg2) => {
   return constructor(tagName, args)
 }
 
-module.exports = {
-  element: (tagName, arg1, arg2) => _element(tagName)(arg1, arg2),
 
-  a: _element('a'),
-  abbr: _element('abbr'),
-  acronym: _element('acronym'),
-  address: _element('address'),
-  applet: _element('applet'),
-  area: _element('area'),
-  article: _element('article'),
-  aside: _element('aside'),
-  audio: _element('audio'),
-  b: _element('b'),
-  base: _element('base'),
-  basefont: _element('basefont'),
-  bdo: _element('bdo'),
-  bgsound: _element('bgsound'),
-  big: _element('big'),
-  blink: _element('blink'),
-  blockquote: _element('blockquote'),
-  body: _element('body'),
-  br: _element('br'),
-  button: _element('button'),
-  canvas: _element('canvas'),
-  caption: _element('caption'),
-  center: _element('center'),
-  cite: _element('cite'),
-  code: _element('code'),
-  col: _element('col'),
-  colgroup: _element('colgroup'),
-  command: _element('command'),
-  datalist: _element('datalist'),
-  dd: _element('dd'),
-  del: _element('del'),
-  details: _element('details'),
-  dfn: _element('dfn'),
-  div: _element('div'),
-  dl: _element('dl'),
-  dt: _element('dt'),
-  em: _element('em'),
-  embed: _element('embed'),
-  fieldset: _element('fieldset'),
-  figcaption: _element('figcaption'),
-  figure: _element('figure'),
-  font: _element('font'),
-  footer: _element('footer'),
-  form: _element('form'),
-  frame: _element('frame'),
-  frameset: _element('frameset'),
-  h1: _element('h1'),
-  h2: _element('h2'),
-  h3: _element('h3'),
-  h4: _element('h4'),
-  h5: _element('h5'),
-  h6: _element('h6'),
-  head: _element('head'),
-  header: _element('header'),
-  hgroup: _element('hgroup'),
-  hr: _element('hr'),
-  html: _element('html'),
-  i: _element('i'),
-  iframe: _element('iframe'),
-  img: _element('img'),
-  input: _element('input'),
-  ins: _element('ins'),
-  isindex: _element('isindex'),
-  kbd: _element('kbd'),
-  keygen: _element('keygen'),
-  label: _element('label'),
-  legend: _element('legend'),
-  li: _element('li'),
-  link: _element('link'),
-  listing: _element('listing'),
-  map: _element('map'),
-  mark: _element('mark'),
-  marquee: _element('marquee'),
-  math: _element('math'),
-  menu: _element('menu'),
-  meta: _element('meta'),
-  meter: _element('meter'),
-  nav: _element('nav'),
-  nextid: _element('nextid'),
-  nobr: _element('nobr'),
-  noembed: _element('noembed'),
-  noframes: _element('noframes'),
-  noscript: _element('noscript'),
-  object: _element('object'),
-  ol: _element('ol'),
-  optgroup: _element('optgroup'),
-  option: _element('option'),
-  output: _element('output'),
-  p: _element('p'),
-  param: _element('param'),
-  plaintext: _element('plaintext'),
-  pre: _element('pre'),
-  progress: _element('progress'),
-  q: _element('q'),
-  rp: _element('rp'),
-  rt: _element('rt'),
-  ruby: _element('ruby'),
-  s: _element('s'),
-  samp: _element('samp'),
-  script: _element('script'),
-  section: _element('section'),
-  select: _element('select'),
-  small: _element('small'),
-  source: _element('source'),
-  spacer: _element('spacer'),
-  span: _element('span'),
-  strike: _element('strike'),
-  strong: _element('strong'),
-  style: _element('style'),
-  sub: _element('sub'),
-  sup: _element('sup'),
-  summary: _element('summary'),
-  svg: _element('svg'),
-  table: _element('table'),
-  tbody: _element('tbody'),
-  td: _element('td'),
-  textarea: _element('textarea'),
-  tfoot: _element('tfoot'),
-  th: _element('th'),
-  thead: _element('thead'),
-  time: _element('time'),
-  title: _element('title'),
-  tr: _element('tr'),
-  track: _element('track'),
-  tt: _element('tt'),
-  u: _element('u'),
-  ul: _element('ul'),
-  var: _element('var'),
-  video: _element('video'),
-  wbr: _element('wbr'),
-  xmp: _element('xmp'),
+export function element(tagName, arg1, arg2) { return _element(tagName, arg1, arg2); }
 
-  /* Other node types */
-  text: _element('text'),
-  fragment: _element('fragment')
-}
+export function a(arg1, arg2) { return _element('a', arg1, arg2); }
+export function abbr(arg1, arg2) { return _element('abbr', arg1, arg2); }
+export function acronym(arg1, arg2) { return _element('acronym', arg1, arg2); }
+export function address(arg1, arg2) { return _element('address', arg1, arg2); }
+export function applet(arg1, arg2) { return _element('applet', arg1, arg2); }
+export function area(arg1, arg2) { return _element('area', arg1, arg2); }
+export function article(arg1, arg2) { return _element('article', arg1, arg2); }
+export function aside(arg1, arg2) { return _element('aside', arg1, arg2); }
+export function audio(arg1, arg2) { return _element('audio', arg1, arg2); }
+export function b(arg1, arg2) { return _element('b', arg1, arg2); }
+export function base(arg1, arg2) { return _element('base', arg1, arg2); }
+export function basefont(arg1, arg2) { return _element('basefont', arg1, arg2); }
+export function bdo(arg1, arg2) { return _element('bdo', arg1, arg2); }
+export function bgsound(arg1, arg2) { return _element('bgsound', arg1, arg2); }
+export function big(arg1, arg2) { return _element('big', arg1, arg2); }
+export function blink(arg1, arg2) { return _element('blink', arg1, arg2); }
+export function blockquote(arg1, arg2) { return _element('blockquote', arg1, arg2); }
+export function body(arg1, arg2) { return _element('body', arg1, arg2); }
+export function br(arg1, arg2) { return _element('br', arg1, arg2); }
+export function button(arg1, arg2) { return _element('button', arg1, arg2); }
+export function canvas(arg1, arg2) { return _element('canvas', arg1, arg2); }
+export function caption(arg1, arg2) { return _element('caption', arg1, arg2); }
+export function center(arg1, arg2) { return _element('center', arg1, arg2); }
+export function cite(arg1, arg2) { return _element('cite', arg1, arg2); }
+export function code(arg1, arg2) { return _element('code', arg1, arg2); }
+export function col(arg1, arg2) { return _element('col', arg1, arg2); }
+export function colgroup(arg1, arg2) { return _element('colgroup', arg1, arg2); }
+export function command(arg1, arg2) { return _element('command', arg1, arg2); }
+export function datalist(arg1, arg2) { return _element('datalist', arg1, arg2); }
+export function dd(arg1, arg2) { return _element('dd', arg1, arg2); }
+export function del(arg1, arg2) { return _element('del', arg1, arg2); }
+export function details(arg1, arg2) { return _element('details', arg1, arg2); }
+export function dfn(arg1, arg2) { return _element('dfn', arg1, arg2); }
+export function div(arg1, arg2) { return _element('div', arg1, arg2); }
+export function dl(arg1, arg2) { return _element('dl', arg1, arg2); }
+export function dt(arg1, arg2) { return _element('dt', arg1, arg2); }
+export function em(arg1, arg2) { return _element('em', arg1, arg2); }
+export function embed(arg1, arg2) { return _element('embed', arg1, arg2); }
+export function fieldset(arg1, arg2) { return _element('fieldset', arg1, arg2); }
+export function figcaption(arg1, arg2) { return _element('figcaption', arg1, arg2); }
+export function figure(arg1, arg2) { return _element('figure', arg1, arg2); }
+export function font(arg1, arg2) { return _element('font', arg1, arg2); }
+export function footer(arg1, arg2) { return _element('footer', arg1, arg2); }
+export function form(arg1, arg2) { return _element('form', arg1, arg2); }
+export function frame(arg1, arg2) { return _element('frame', arg1, arg2); }
+export function frameset(arg1, arg2) { return _element('frameset', arg1, arg2); }
+export function h1(arg1, arg2) { return _element('h1', arg1, arg2); }
+export function h2(arg1, arg2) { return _element('h2', arg1, arg2); }
+export function h3(arg1, arg2) { return _element('h3', arg1, arg2); }
+export function h4(arg1, arg2) { return _element('h4', arg1, arg2); }
+export function h5(arg1, arg2) { return _element('h5', arg1, arg2); }
+export function h6(arg1, arg2) { return _element('h6', arg1, arg2); }
+export function head(arg1, arg2) { return _element('head', arg1, arg2); }
+export function header(arg1, arg2) { return _element('header', arg1, arg2); }
+export function hgroup(arg1, arg2) { return _element('hgroup', arg1, arg2); }
+export function hr(arg1, arg2) { return _element('hr', arg1, arg2); }
+export function html(arg1, arg2) { return _element('html', arg1, arg2); }
+export function i(arg1, arg2) { return _element('i', arg1, arg2); }
+export function iframe(arg1, arg2) { return _element('iframe', arg1, arg2); }
+export function img(arg1, arg2) { return _element('img', arg1, arg2); }
+export function input(arg1, arg2) { return _element('input', arg1, arg2); }
+export function ins(arg1, arg2) { return _element('ins', arg1, arg2); }
+export function isindex(arg1, arg2) { return _element('isindex', arg1, arg2); }
+export function kbd(arg1, arg2) { return _element('kbd', arg1, arg2); }
+export function keygen(arg1, arg2) { return _element('keygen', arg1, arg2); }
+export function label(arg1, arg2) { return _element('label', arg1, arg2); }
+export function legend(arg1, arg2) { return _element('legend', arg1, arg2); }
+export function li(arg1, arg2) { return _element('li', arg1, arg2); }
+export function link(arg1, arg2) { return _element('link', arg1, arg2); }
+export function listing(arg1, arg2) { return _element('listing', arg1, arg2); }
+export function map(arg1, arg2) { return _element('map', arg1, arg2); }
+export function mark(arg1, arg2) { return _element('mark', arg1, arg2); }
+export function marquee(arg1, arg2) { return _element('marquee', arg1, arg2); }
+export function math(arg1, arg2) { return _element('math', arg1, arg2); }
+export function menu(arg1, arg2) { return _element('menu', arg1, arg2); }
+export function meta(arg1, arg2) { return _element('meta', arg1, arg2); }
+export function meter(arg1, arg2) { return _element('meter', arg1, arg2); }
+export function nav(arg1, arg2) { return _element('nav', arg1, arg2); }
+export function nextid(arg1, arg2) { return _element('nextid', arg1, arg2); }
+export function nobr(arg1, arg2) { return _element('nobr', arg1, arg2); }
+export function noembed(arg1, arg2) { return _element('noembed', arg1, arg2); }
+export function noframes(arg1, arg2) { return _element('noframes', arg1, arg2); }
+export function noscript(arg1, arg2) { return _element('noscript', arg1, arg2); }
+export function object(arg1, arg2) { return _element('object', arg1, arg2); }
+export function ol(arg1, arg2) { return _element('ol', arg1, arg2); }
+export function optgroup(arg1, arg2) { return _element('optgroup', arg1, arg2); }
+export function option(arg1, arg2) { return _element('option', arg1, arg2); }
+export function output(arg1, arg2) { return _element('output', arg1, arg2); }
+export function p(arg1, arg2) { return _element('p', arg1, arg2); }
+export function param(arg1, arg2) { return _element('param', arg1, arg2); }
+export function plaintext(arg1, arg2) { return _element('plaintext', arg1, arg2); }
+export function pre(arg1, arg2) { return _element('pre', arg1, arg2); }
+export function progress(arg1, arg2) { return _element('progress', arg1, arg2); }
+export function q(arg1, arg2) { return _element('q', arg1, arg2); }
+export function rp(arg1, arg2) { return _element('rp', arg1, arg2); }
+export function rt(arg1, arg2) { return _element('rt', arg1, arg2); }
+export function ruby(arg1, arg2) { return _element('ruby', arg1, arg2); }
+export function s(arg1, arg2) { return _element('s', arg1, arg2); }
+export function samp(arg1, arg2) { return _element('samp', arg1, arg2); }
+export function script(arg1, arg2) { return _element('script', arg1, arg2); }
+export function section(arg1, arg2) { return _element('section', arg1, arg2); }
+export function select(arg1, arg2) { return _element('select', arg1, arg2); }
+export function small(arg1, arg2) { return _element('small', arg1, arg2); }
+export function source(arg1, arg2) { return _element('source', arg1, arg2); }
+export function spacer(arg1, arg2) { return _element('spacer', arg1, arg2); }
+export function span(arg1, arg2) { return _element('span', arg1, arg2); }
+export function strike(arg1, arg2) { return _element('strike', arg1, arg2); }
+export function strong(arg1, arg2) { return _element('strong', arg1, arg2); }
+export function style(arg1, arg2) { return _element('style', arg1, arg2); }
+export function sub(arg1, arg2) { return _element('sub', arg1, arg2); }
+export function sup(arg1, arg2) { return _element('sup', arg1, arg2); }
+export function summary(arg1, arg2) { return _element('summary', arg1, arg2); }
+export function svg(arg1, arg2) { return _element('svg', arg1, arg2); }
+export function table(arg1, arg2) { return _element('table', arg1, arg2); }
+export function tbody(arg1, arg2) { return _element('tbody', arg1, arg2); }
+export function td(arg1, arg2) { return _element('td', arg1, arg2); }
+export function textarea(arg1, arg2) { return _element('textarea', arg1, arg2); }
+export function tfoot(arg1, arg2) { return _element('tfoot', arg1, arg2); }
+export function th(arg1, arg2) { return _element('th', arg1, arg2); }
+export function thead(arg1, arg2) { return _element('thead', arg1, arg2); }
+export function time(arg1, arg2) { return _element('time', arg1, arg2); }
+export function title(arg1, arg2) { return _element('title', arg1, arg2); }
+export function tr(arg1, arg2) { return _element('tr', arg1, arg2); }
+export function track(arg1, arg2) { return _element('track', arg1, arg2); }
+export function tt(arg1, arg2) { return _element('tt', arg1, arg2); }
+export function u(arg1, arg2) { return _element('u', arg1, arg2); }
+export function ul(arg1, arg2) { return _element('ul', arg1, arg2); }
+export function var_(arg1, arg2) { return _element('var', arg1, arg2); }
+export function video(arg1, arg2) { return _element('video', arg1, arg2); }
+export function wbr(arg1, arg2) { return _element('wbr', arg1, arg2); }
+export function xmp(arg1, arg2) { return _element('xmp', arg1, arg2); }
+
+/* Other node types */
+export function text(arg1, arg2) { return _element('text', arg1, arg2); }
+export function fragment(arg1, arg2) { return _element('fragment', arg1, arg2); }

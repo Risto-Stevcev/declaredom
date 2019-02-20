@@ -4,8 +4,8 @@
   "description": "Declarative syntax for creating DOM elements",
   "main": "index.js",
   "scripts": {
-    "example": "parcel example.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "bundles": "parcel build example.js && webpack example.js",
+    "test": "npm run bundles && bats test-tree-shaking.bats"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,9 @@
   },
   "homepage": "https://github.com/Risto-Stevcev/declaredom#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.11.0"
+    "bats": "^1.1.0",
+    "parcel-bundler": "^1.11.0",
+    "webpack": "^4.29.5",
+    "webpack-cli": "^3.2.3"
   }
 }
