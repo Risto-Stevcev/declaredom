@@ -48,7 +48,8 @@ const setAttribute = (element, key) => value => {
       }) ;break
     case 'style':
       Object.entries(value).forEach(([property, value]) => {
-        element.style[property] = value
+        const propertyName = property.replace(/_([a-z]{1})/g, (_, c) => c.toUpperCase())
+        element.style[propertyName] = value
       }) ;break
     case 'contentEditable':
       element.contentEditable = value ? 'true' : 'false' ;break
